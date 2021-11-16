@@ -57,6 +57,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'bootstrap', '~> 5.1.3'
+gem 'cancancan'
 gem 'figaro'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sprockets-rails', require: 'sprockets/railtie'
