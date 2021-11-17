@@ -28,7 +28,7 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food.destroy
+    @food.delete
     respond_to do |format|
       flash[:success] = 'The item was succesfully destroyed'
       format.html { redirect_to root_url, notice: 'The item was succesfully destroyed' }

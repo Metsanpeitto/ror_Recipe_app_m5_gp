@@ -14,8 +14,8 @@
         <% @foods.each do |f| %>
           <tr>
             <th scope="row"><%= f.name %></th>
-            <td><%= f.measurement_unit %></td>
-            <td><%= f.price %></td>
+            <td><%= f.measurement_unit %> </td>
+            <td><%= f.price %>$</td>
             <td><%= button_to "Delete", f, method: 'delete',  class: 'btn btn-danger' %></td>
           </tr>
         <% end %>
