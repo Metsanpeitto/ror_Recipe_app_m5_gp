@@ -21,8 +21,8 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   #host: localhost
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: postgres
+  #username: postgres
+  #password: postgres
 
 development:
   <<: *default
@@ -85,7 +85,7 @@ test:
 #
 production:
   <<: *default
-  database: ror_recipe_app_m5_gp_production
-  username: postgres
-  password: postgres
+  #database: ror_recipe_app_m5_gp_production
+  #username: postgres
+  #password: postgres
   #host: localhost
