@@ -36,24 +36,16 @@ $border: 2px solid black;
     grid-column-start: 2;
 }
 
-.modal {
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    width: max-content;
-    height: fit-content;
-    overflow-x: hidden;
-    overflow-y: auto;
-    outline: 0;
-    background: white;
-    padding: 2%;
-    border: $border;
-    border-radius: 10px;
-}
 
 .recipe-show-buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.recipes-layout {
+  .buttons {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+   }
 }

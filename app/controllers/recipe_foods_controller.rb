@@ -25,9 +25,9 @@ class RecipeFoodsController < ApplicationController
       else
         set_foods
         byebug
-        @recipe_food = RecipeFood.where(recipe_food_params[:recipe_id])
+        
         format.html do
-          redirect_to edit_recipe_recipe_food_path(id), status: :unprocessable_entity
+          render :new, status: :unprocessable_entity
         end
       end
     end

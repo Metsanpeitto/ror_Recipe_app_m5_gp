@@ -16,11 +16,9 @@ class FoodsController < ApplicationController
     respond_to do |format|
       if @food.save
         flash[:success] = 'The food item was added succesfully'
-        format.html { redirect_to root_url, notice: 'The food item was added succesfully' }
-        format.json { render :show, status: :created, location: @food }
+        format.html { redirect_to foods_path, notice: 'The food item was added succesfully' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @food.errors, status: :unprocessable_entity }
         flash[:alert] = "The item couldn't be created."
       end
     end
