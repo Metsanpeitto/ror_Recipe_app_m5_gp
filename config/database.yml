@@ -85,7 +85,5 @@ test:
 #
 production:
   <<: *default
-  #database: ror_recipe_app_m5_gp_production
-  #username: postgres
-  #password: postgres
-  #host: localhost
+  adapter: postgresql
+  host: ENV['DATABASE_URL']
