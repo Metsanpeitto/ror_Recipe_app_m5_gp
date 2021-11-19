@@ -11,3 +11,24 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+
+document.addEventListener("turbolinks:load", () => {
+    (document.querySelectorAll(".notification .delete") || []).forEach(
+        ($delete) => {
+            const $notification = $delete.parentNode;
+
+            $delete.addEventListener("click", () => {
+                $notification.parentNode.removeChild($notification);
+            });
+        }
+    );
+
+    document.getElementById("open-modal").addEventListener("click", () => {
+        document.getElementById("modal-picker").classList.add("is-active");
+    });
+
+    document.getElementById("close-modal").addEventListener("click", () => {
+        document.getElementById("modal-picker").classList.remove("is-active");
+    });
+});

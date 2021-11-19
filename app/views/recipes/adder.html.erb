@@ -1,0 +1,20 @@
+<div class="modal  ">
+  <h1>Add ingredient</h1>
+  <%= form_with model: @food do |f| %>
+    <div class="mb-3">
+      <label for="form_food_name" class="form-label">Name</label>
+      <%= f.select :name, @name_array, :required => true  %>
+    </div>
+    <%= f.fields_for :food_recipes do |fr| %>
+      <div class="mb-3">
+        <label for="form_food_price" class="form-label">Quantity</label>
+        <%= fr.number_field :quantity, :required => true %>
+      </div>
+    <% end %>
+    <div class="mb-3">
+      <label for="form_food_measurement_unit" class="form-label">Measurement unit</label>
+      <%= f.select :measurement_unit, ['grams', 'kilograms'], :required => true  %>
+    </div>
+    <%= link_to 'Add', 'recipes/add_ingredient?param1="asdas"&param2="asdasd',  class: 'btn btn-primary' %>
+  <% end %>
+</div>

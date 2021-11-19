@@ -1,0 +1,42 @@
+<section class="recipes-layout">
+  <% if @recipe %>
+    <h2> <%= @recipe.name %> </h2>
+    <div class="recipes-show-first">
+      <h5>Preparation time : <%= @recipe.preparation_time %> hours</h5>
+      <div class="public">
+        <label for="form_recipe_price" class="form-label">Public recipes</label>
+        <input type="checkbox" checked data-toggle="toggle">
+      </div>
+    </div>
+    <h5>Cooking time : <%= @recipe.cooking_time %> hours</h5>
+    <h5> <%= @recipe.description %> </h5>
+    <div class="buttons">
+      <button id="open-modal" class="btn btn-primary">Generate shopping list</button>
+      <% if can? :manage, @recipe %>
+        <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "btn btn-success" %>
+      <% end %>
+    </div>
+    <div class="table">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Food</th>
+            <th scope="col">Measurement unit</th>
+            <th scope="col">Unit price</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @recipe.foods.each do |f| %>
+            <tr>
+              <th scope="row"><%= f.name %></th>
+              <td><%= f.measurement_unit %> </td>
+              <td><%= f.price %>$</td>
+              <td><%= button_to "Remove", f, method: 'delete',  class: 'btn btn-danger' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</section>

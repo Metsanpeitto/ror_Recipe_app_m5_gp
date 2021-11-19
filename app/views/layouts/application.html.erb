@@ -9,19 +9,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <nav id="user_nav" class="navbar navbar-expand-lg navbar-light bg-light">
-      <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. This cannot be cheese?
-        <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class:"nav-item active" %>
-      <% else %>
-        <%= link_to 'Register', new_user_registration_path, class:"nav-item " %> or <%= link_to 'Sign in', new_user_session_path, class:"nav-item " %>
-      <% end %>
+    <%= render 'layouts/nav' %>
+    <div class="main">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
     </div>
-  </nav>
-  <div class="main">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </div>
-</body>
+  </body>
 </html>

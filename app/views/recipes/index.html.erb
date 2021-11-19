@@ -1,0 +1,18 @@
+<section class="recipes-layout">
+  <h2>Recipes</h2>
+  <% if @recipes %>
+    <% @recipes.each do |r|%>
+      <%= link_to recipe_path(r.id) , id:r.id, class: 'card-link' do %>
+        <div class="card-recipe">
+          <div class="card-left">
+            <h5><%= r.name %></h5>
+            <%= button_to "Delete", r, method: 'delete',  class: 'btn btn-danger' %>
+          </div>
+          <div class="card-right">
+            <p><%= r.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</section>

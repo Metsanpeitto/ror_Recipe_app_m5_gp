@@ -1,0 +1,17 @@
+  <%= form_with model: recipe_food do |f| %>
+  <div class="mb-3">
+    <%= f.label :food, class: "label" %>
+    <div class="select is-fullwidth">
+      <%= f.select :food_id, @foods %>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= f.label :quantity, class: "label" %>
+    <div class="control">
+      <%= f.text_field :quantity, class: "input", type: "number" %>
+    </div>
+  </div>
+  <%= f.hidden_field :recipe_id, value: recipe_food.recipe_id %>
+  <%= f.submit   class: 'btn btn-primary' %>
+<% end %>
+</div>

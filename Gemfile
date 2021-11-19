@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'devise'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -59,6 +60,9 @@ end
 gem 'bootstrap', '~> 5.1.3'
 gem 'cancancan'
 gem 'figaro'
+gem 'hotwire-rails'
+gem 'popper_js', '~> 2.9.3'
+gem 'rails-bootstrap-toggle-buttons'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sprockets-rails', require: 'sprockets/railtie'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

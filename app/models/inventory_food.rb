@@ -1,5 +1,5 @@
-class FoodRecipe < ApplicationRecord
-  belongs_to :recipe
+class InventoryFood < ApplicationRecord
+  belongs_to :inventory
   belongs_to :food
 
   validates :food_id, presence: true, uniqueness: true

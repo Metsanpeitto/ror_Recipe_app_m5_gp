@@ -1,5 +1,4 @@
 <section class="foods-layout">
-  <%= button_to "Add food", new_food_path, method: :get, class: 'btn btn-success' %>
   <table class="table">
     <thead>
       <tr>
@@ -16,10 +15,11 @@
             <th scope="row"><%= f.name %></th>
             <td><%= f.measurement_unit %> </td>
             <td><%= f.price %>$</td>
-            <td><%= button_to "Delete", f, method: 'delete',  class: 'btn btn-danger' %></td>
+            <td><%= button_to "Remove", f, method: 'delete',  class: 'btn btn-danger' %></td>
           </tr>
         <% end %>
       <% end %>
     </tbody>
   </table>
+  <%= button_to "Add food", new_food_path, method: :get, class: 'btn btn-success' %>
 </section>

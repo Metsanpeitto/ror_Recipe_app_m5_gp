@@ -1,0 +1,59 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$border: 2px solid black; 
+
+.card-link {
+    text-decoration: unset;
+    color: black;
+}
+
+.card-link:hover {
+    color:black !important; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+.card-recipe {
+   border: $border;
+   border-radius: 10px;
+   display: grid;
+   padding: 2%;
+   grid-template-columns: 50% 50%;
+   width: 50%;
+   min-width: 400px;
+}
+
+.card-left {
+    width: 100%;
+    grid-column-start: 1;
+    text-transform: capitalize;
+}
+
+.card-right {
+    width: 100%;    
+    grid-column-start: 2;
+}
+
+.modal {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: max-content;
+    height: fit-content;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    background: white;
+    padding: 2%;
+    border: $border;
+    border-radius: 10px;
+}
+
+.recipe-show-buttons {
+  display: flex;
+  justify-content: space-between;
+}

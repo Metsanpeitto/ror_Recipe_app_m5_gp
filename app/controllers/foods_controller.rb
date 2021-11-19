@@ -8,7 +8,6 @@ class FoodsController < ApplicationController
 
   def new
     @food = Food.new
-    @measurement_units = %w[grams kilograms]
   end
 
   def create
